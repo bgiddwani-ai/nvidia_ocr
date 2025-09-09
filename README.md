@@ -11,12 +11,21 @@ A Python client library for the NVIDIA OCR API that provides simplified access t
 - 🔍 **Health Monitoring**: Built-in service health checks
 - 📝 **Markdown Output**: Clean, structured text output
 
-
-## Installation
+### Setup Server
 
 ```bash
+docker pull <conatiner_name:ocr>
+
+docker run -it --gpus device=0 --ipc=host -p 8000:8000 -p 8001:8001 <conatiner_name:ocr>
+```
+
+## Setup Client
+
+```bash
+git clone https://github.com/bgiddwani-ai/nvidia_ocr.git
 pip install -e .
 ```
+
 ## Quick Start
 
 ```python
