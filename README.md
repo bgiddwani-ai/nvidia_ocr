@@ -5,7 +5,7 @@ A Python client library for NVIDIA OCR services.
 ## Installation
 
 ```bash
-pip install nvidia-ocr
+pip install -e .
 ```
 
 ## Usage
