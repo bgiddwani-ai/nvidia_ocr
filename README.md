@@ -31,7 +31,6 @@ uploaded_file = client.files.upload(file_data, purpose="ocr")
 result = client.process_uploaded_file(
     file_id=uploaded_file.id,
     prompt_mode="prompt_layout_all_en",
-    include_image_base64=True
 )
 
 print(result)
@@ -53,7 +52,6 @@ document = {
 
 result = client.process_image(
     document=document,
-    include_image_base64=True,
     prompt_mode="prompt_layout_all_en"
 )
 
@@ -101,22 +99,20 @@ Initialize the NVIDIA OCR client.
 - `api_key`: Your API key for authentication
 - `url`: Base URL of the OCR service (default: "http://localhost:8000")
 
-#### `process_uploaded_file(file_id: str, prompt_mode: str = "prompt_layout_all_en", include_image_base64: bool = True) -> Dict[str, Any]`
+#### `process_uploaded_file(file_id: str, prompt_mode: str = "prompt_layout_all_en") -> Dict[str, Any]`
 
 Process an uploaded file.
 
 **Parameters:**
 - `file_id`: ID of the uploaded file
 - `prompt_mode`: Processing mode (default: "prompt_layout_all_en")
-- `include_image_base64`: Whether to include base64 image data in response
 
-#### `process_image(document: Dict[str, Any], include_image_base64: bool = True, prompt_mode: str = "prompt_layout_all_en") -> Dict[str, Any]`
+#### `process_image(document: Dict[str, Any],  prompt_mode: str = "prompt_layout_all_en") -> Dict[str, Any]`
 
 Process a base64 encoded image directly.
 
 **Parameters:**
 - `document`: Dictionary containing image data and filename
-- `include_image_base64`: Whether to include base64 image data in response
 - `prompt_mode`: Processing mode
 
 #### `get_results(file_id: str) -> Dict[str, Any]`
